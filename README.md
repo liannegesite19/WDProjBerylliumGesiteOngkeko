@@ -29,8 +29,6 @@ P4 (It's Quiet Uptown): The It’s Quiet Uptown page shows the period of grief a
 
 P5 (Legacy): Finally, the Legacy page shows how Eliza carried on Hamilton’s legacy, including her charitable work and how their story continues to inspire modern culture. The Sources section will be placed at the bottom of all pages as a QR code to list all references used in the website.
 
-P6 (Sources): This will contain the list of all sources we will use in this project.
-
 ---
 **Other Notes:**
 
