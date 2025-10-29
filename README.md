@@ -39,7 +39,7 @@ P6 (Sources): This will contain the list of all sources we will use in this proj
 - In addition, the Helpless page will feature a timeline slider created using JavaScript. This interactive element will allow users to scroll or click through key moments in Alexander and Eliza’s relationship, with corresponding images and descriptions appearing as they move along the timeline. These uses of JavaScript will make the storytelling experience more dynamic and personalized for each visitor.
 
 ---
-**Wireframes:***
+**Wireframes:**
 
 Homepage: 
 
