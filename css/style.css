@@ -32,65 +32,98 @@ body.home {
 
 .side-rect {
   position: absolute;
-  top: calc(100% + 85px);
+  top: 50%; /* vertically center */
   width: 650px;
-  height: 120vh;                 /* NOT 120vh */
+  height: 120vh;
   background: rgba(67, 41, 11, 0.18);
   border: 3px solid #644414;
   border-radius: 80px;
+  transform: translateY(-50%); /* center vertically */
+  transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+  cursor: pointer;
   z-index: 1;
+}
+
+/* Active rectangle: slightly bigger */
+.side-rect.active {
+  transform: scale(1.05) translateX(var(--orig-transform)); /* scale up */
+  z-index: 2;
+}
+
+/* Inactive rectangle: slightly smaller */
+.side-rect.inactive {
+  transform: scale(0.95) translateX(var(--orig-transform)); /* scale down */
+  opacity: 0.8;
+  z-index: 1;
+}
+
+
+/* Rectangle hover effect */
+.side-rect:hover {
+  outline: 3px solid white;      /* white outline */
+  outline-offset: 5px;           /* space between rectangle and outline */
+  box-shadow: 0 0 15px 3px rgba(255,255,255,0.5); /* soft glow */
+  transition: 0.2s ease-in-out;
 }
 
 .left-rect {
   left: 50%;
+  top: 150px;
   transform: translateX(calc(-100% - 50px));
 }
 
 .right-rect {
   left: 50%;
+  top: 150px;
   transform: translateX(50px);
 }
 
+/* Make content scale with rectangle */
+.rect-content {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center; /* ensures scale happens from center */
+}
+
+/* Images inside rectangle scale naturally */
+.rect-image {
+  width: 1100px; /* base size */
+  max-width: 90%;
+  height: auto;
+  margin-bottom: 150px;
+  margin-top: -400px;
+  z-index: 2;
+}
+
+/* Example text styling */
+.rect-content h2 {
+  margin: 5px 0;
+  font-size: 4.5rem; 
+  z-index: 2;
+}
+
+.rect-content p {
+  font-size: 2.5rem;
+  max-width: 80%;
+  z-index: 2;
+}
+
+/* Optional: let hover outline and shadow scale too */
+.side-rect.active .rect-content,
+.side-rect.inactive .rect-content {
+  transition: inherit; /* inherit from parent rectangle */
+}
 
 .title-wrapper,
 .choices {
   position: relative;
   z-index: 2;
 }
-
-.arrow {
-  width: 0;
-  height: 0;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  position: fixed;          /* stays in place on scroll */
-  top: calc(100% + 110px);                 /* vertically centered */
-  transform: translateY(0);
-  font-size: 50px;          /* arrow size */
-  color: #644414;           /* match your rectangle outline */
-  cursor: pointer;
-  z-index: 5;               /* above all other content */
-  user-select: none;        /* prevents accidental text selection */
-  padding: 10px;
-}
-
-.left-arrow {
-  left: calc(50% - 520px - 50px);  /* rectangle width + gap offset */
-  border-right: 25px solid #644414;
-}
-
-.right-arrow {
-  left: calc(50% + 50px);          /* half gap */
-  border-left: 25px solid #644414;
-}
-
-
-.arrow:hover {
-  color: #43290b;           /* darker on hover */
-  transform: translateY(-50%) scale(1.1); /* subtle zoom */
-  transition: 0.2s ease-in-out;
-}
-
 
 
 /* Hamilton Theme */
