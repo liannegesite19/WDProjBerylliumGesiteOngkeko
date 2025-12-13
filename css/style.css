@@ -100,6 +100,15 @@ p {
   text-align: center;
 }
 
+.side-rect .rect-content h2 {
+  margin-bottom: 25px;
+}
+.side-rect .rect-content p {
+  margin: 0;         /* removes default margins */
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 /* Images inside rectangle scale naturally */
 .rect-image {
   width: 420px; /* base size */
@@ -113,13 +122,13 @@ p {
 .rect-content h2 {
   font-size: 3.2rem; 
   margin-top: -50px;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
   z-index: 2;
 }
 
 .rect-content p {
   font-size: 1.8rem;
-  max-width: 75%;
+  text-align: left;
   z-index: 2;
 }
 
