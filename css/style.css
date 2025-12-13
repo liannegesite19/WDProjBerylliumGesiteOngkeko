@@ -1,16 +1,96 @@
+
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: Georgia, serif;
   margin: 0;
   padding: 40px;
 }
 
+h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+p {
+  font-size: 1rem;
+  max-width: 500px;
+  margin-top: 8px;
+}
+
+
 body.home {
-  background-image: url("../images/indexbg.png");
+  background-image: url("../images/hamilbg.PNG");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
+  overflow: hidden;
 }
+
+.side-rect {
+  position: absolute;
+  top: calc(100% + 85px);
+  width: 650px;
+  height: 120vh;                 /* NOT 120vh */
+  background: rgba(67, 41, 11, 0.18);
+  border: 3px solid #644414;
+  border-radius: 80px;
+  z-index: 1;
+}
+
+.left-rect {
+  left: 50%;
+  transform: translateX(calc(-100% - 50px));
+}
+
+.right-rect {
+  left: 50%;
+  transform: translateX(50px);
+}
+
+
+.title-wrapper,
+.choices {
+  position: relative;
+  z-index: 2;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  position: fixed;          /* stays in place on scroll */
+  top: calc(100% + 110px);                 /* vertically centered */
+  transform: translateY(0);
+  font-size: 50px;          /* arrow size */
+  color: #644414;           /* match your rectangle outline */
+  cursor: pointer;
+  z-index: 5;               /* above all other content */
+  user-select: none;        /* prevents accidental text selection */
+  padding: 10px;
+}
+
+.left-arrow {
+  left: calc(50% - 520px - 50px);  /* rectangle width + gap offset */
+  border-right: 25px solid #644414;
+}
+
+.right-arrow {
+  left: calc(50% + 50px);          /* half gap */
+  border-left: 25px solid #644414;
+}
+
+
+.arrow:hover {
+  color: #43290b;           /* darker on hover */
+  transform: translateY(-50%) scale(1.1); /* subtle zoom */
+  transition: 0.2s ease-in-out;
+}
+
 
 
 /* Hamilton Theme */
@@ -32,12 +112,14 @@ button {
   cursor: pointer;
 }
 
-.logo-container {
-  text-align: left;
-  margin-bottom: 30px;
+.title-container {
+  display: flex;
+  align-items: center;   /* vertical alignment */
+  gap: 15px;             /* space between logo and text */
+  margin-bottom: 6px;
 }
 
 .logo {
-  width: 200px; /* adjust size as needed */
+  width: 60px;           /* matches h1 height nicely */
   height: auto;
 }
