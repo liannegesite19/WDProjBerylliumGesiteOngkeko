@@ -1,12 +1,29 @@
-
-html, body {
-  height: 100%;
+html {
+  min-height: 100%;
 }
 
+.bg-wrapper {
+  position: fixed;   /* stays behind everything */
+  inset: 0;          /* top:0; right:0; bottom:0; left:0 */
+  z-index: -1;       /* behind content */
+  overflow: hidden;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* fills the whole div */
+  object-position: center; /* keeps main subject centered */
+}
+
+
+/* Let the page grow naturally */
 body {
-  font-family: Georgia, serif;
+  min-height: 200vh;          /* makes page scrollable */
   margin: 0;
-  padding: 40px;
+  background: transparent;   /* IMPORTANT */
+  overflow-x: hidden;
+  font-family: Georgia, serif;
 }
 
 h1 {
@@ -20,21 +37,11 @@ p {
   margin-top: 8px;
 }
 
-
-body.home {
-  background-image: url("../images/hamilbg.PNG");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
 .side-rect {
   position: absolute;
   top: 50%; /* vertically center */
-  width: 650px;
-  height: 120vh;
+  width: 520px;
+  height: 85vh;
   background: rgba(67, 41, 11, 0.18);
   border: 3px solid #644414;
   border-radius: 80px;
@@ -68,48 +75,51 @@ body.home {
 
 .left-rect {
   left: 50%;
-  top: 150px;
-  transform: translateX(calc(-100% - 50px));
+  top: 350px;
+  transform: translateX(calc(-100% - 70px));
 }
 
 .right-rect {
   left: 50%;
-  top: 150px;
-  transform: translateX(50px);
+  top: 350px;
+  transform: translateX(70px);
 }
 
-/* Make content scale with rectangle */
+
+
+/* Make content scale with rectangle */ 
 .rect-content {
-  width: 100%;
-  height: 100%;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  transform-origin: center; /* ensures scale happens from center */
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  padding-top: 80px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 /* Images inside rectangle scale naturally */
 .rect-image {
-  width: 1100px; /* base size */
-  max-width: 90%;
+  width: 420px; /* base size */
+  max-width: 85%;
   height: auto;
-  margin-bottom: 150px;
-  margin-top: -400px;
+  margin-bottom: 40px;
+  margin-top: -200px;
   z-index: 2;
 }
 
-/* Example text styling */
 .rect-content h2 {
-  margin: 5px 0;
-  font-size: 4.5rem; 
+  font-size: 3.2rem; 
+  margin-top: -50px;
+  margin-bottom: 15px;
   z-index: 2;
 }
 
 .rect-content p {
-  font-size: 2.5rem;
-  max-width: 80%;
+  font-size: 1.8rem;
+  max-width: 75%;
   z-index: 2;
 }
 
@@ -138,18 +148,55 @@ body.eliza {
   color: #3b2f2f;
 }
 
-button {
-  padding: 15px 25px;
-  margin: 10px;
-  font-size: 16px;
-  cursor: pointer;
+.title-wrapper {
+  margin-top: 15px;
+  text-align: left; /* keep everything left-aligned */
 }
 
 .title-container {
-  display: flex;
-  align-items: center;   /* vertical alignment */
-  gap: 15px;             /* space between logo and text */
-  margin-bottom: 6px;
+  display: flex;             /* logo + heading in a row */
+  align-items: flex-start;        /* vertically center heading along logo */
+  margin-left: 20px;
+  margin-top: 20px; 
+  gap: 7px;                  /* space between logo and heading */
+}
+
+.title-container img.logo {
+  width: 60px;
+  height: auto;
+}
+
+.title-wrapper h1 {
+  color: white;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.title-wrapper p {
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+  margin-top: -1.5em;         /* small gap below heading */
+  margin-left: 88px
+}
+
+.title-bg {
+  display: inline-block;             /* shrink to fit content */
+  background: rgba(0, 0, 0, 0.5);    /* semi-transparent black */
+  border: 1px solid #181717;         /* same outline as rectangles */
+  border-radius: 40px;                /* rounded corners */
+  position: relative;
+
+  padding-top: 0px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 30px;
+
+  margin-left: 20px;
+  margin-top: 0px;
 }
 
 .logo {
