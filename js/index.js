@@ -25,10 +25,16 @@ rightRect.addEventListener('click', (e) => {
   activateRect(rightRect, leftRect);
 });
 
-// Click on background to reset
-body.addEventListener('click', () => {
-  leftRect.classList.remove('active', 'inactive');
-  rightRect.classList.remove('active', 'inactive');
+
+const footer = document.querySelector('.footer-bar');
+const scrollThreshold = 300;
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY > scrollThreshold) {
+        footer.classList.add('show');
+    } else {
+        footer.classList.remove('show');
+    }
 });
 
 
