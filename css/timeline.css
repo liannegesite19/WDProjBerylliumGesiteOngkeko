@@ -1,0 +1,281 @@
+/* Base and Utilities */
+
+
+   
+html {
+  min-height: 100%;
+}
+
+.bg-wrapper {
+  position: fixed;   
+  inset: 0;          
+  z-index: -1;       
+  overflow: hidden;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       
+  object-position: center; 
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: transparent;   
+  overflow-x: hidden; 
+  font-family: Georgia, serif;
+  color: #4b382d;
+}
+
+.timeline-page {
+    position: relative;
+    padding: 100px 50px 0 50px; 
+    z-index: 5;
+    padding-bottom: 80px;
+}
+
+/* Timeline Layout (Horizontal Slider Fixes) */
+
+.timeline-container {
+    position: relative;
+    width: 100%;
+    height: 700px; 
+    margin: 50px 0;
+    
+    overflow-x: scroll; 
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding-bottom: 20px; 
+    
+    /* Scrollbar Styling */
+    scrollbar-width: thin; 
+    scrollbar-color: #8b4513 #e5d8b8; 
+}
+
+.timeline-container::-webkit-scrollbar {
+    height: 10px;
+}
+.timeline-container::-webkit-scrollbar-thumb {
+    background: #8b4513;
+    border-radius: 5px;
+}
+.timeline-container::-webkit-scrollbar-track {
+    background: #e5d8b8;
+}
+
+.timeline-track {
+    display: flex; 
+    width: max-content; 
+    height: 100%;
+    position: relative; 
+}
+
+
+.timeline-axis {
+    content: '';
+    position: absolute;
+    top: 50%; 
+    left: 0;
+    width: 100%; 
+    height: 6px; 
+    background: #8b4513; 
+    z-index: 1; 
+    transform: translateY(-50%);
+}
+
+/* --- Timeline Event Node (The Column Anchor) --- */
+.timeline-event {
+    display: inline-block; 
+    
+    width: 350px; 
+    min-width: 350px; 
+    position: relative;
+    text-align: center;
+    height: 100%; 
+    padding: 0 40px; 
+    
+    white-space: normal; 
+    flex-shrink: 0; 
+}
+
+/* --- The Central Axis Point (Year Circle) --- */
+.axis-point {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 5; 
+}
+
+.year-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #8b4513; 
+    border-radius: 50%;
+    color: #fff8e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer; 
+}
+
+/* --- The Content Boxes (Text) --- */
+.content {
+    width: 250px; 
+    height: 160px; 
+    background-color: #e5d8b8; 
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-left: 5px solid #8b4513; 
+    border-top: 1px solid #644414; 
+    border-bottom: 1px solid #644414; 
+    text-align: left;
+    overflow-y: auto; 
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4; 
+}
+
+.content-top {
+    top: 50px; 
+}
+
+.content-bottom {
+    bottom: 50px;
+}
+
+
+/* --- The Large Placeholder Circles --- */
+.placeholder-circle {
+    width: 150px; 
+    height: 150px;
+    background-color: #b0a99e; 
+    border-radius: 50%;
+    border: 3px solid #644414; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4b382d;
+    font-weight: bold;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 4; 
+}
+
+.circle-top {
+    top: 100px; 
+}
+
+.circle-bottom {
+    bottom: 100px;
+}
+
+
+.vertical-line {
+    position: absolute;
+    width: 4px;
+    background: #8b4513;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.line-top {
+    height: 65px; 
+    top: -65px; 
+}
+
+.line-bottom {
+    height: 65px; 
+    bottom: -65px; 
+}
+
+
+.footer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px 40px;
+    
+    width: 100%;
+    box-sizing: border-box; 
+    background-color: rgba(0, 0, 0, 0.4); 
+    
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    z-index: 100; 
+
+    border-top: 1px solid #8b4513;
+    color: #fff8e1; 
+    font-size: 0.9em;
+}
+
+.footer-bar p {
+    margin: 0;
+    max-width: none;
+}
+
+.timeline-navigation {
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: 10;
+    position: relative; 
+}
+
+.timeline-navigation button {
+    background-color: #8b4513; 
+    color: #fff8e1;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.timeline-navigation button:hover:not(:disabled) {
+    background-color: #644414;
+}
+
+.timeline-navigation button:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+.placeholder-circle:hover {
+    transform: translateX(-50%) scale(1.1); 
+    
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
+}
+
+/* --- The Large Placeholder Circles --- */
+.placeholder-circle {
+    width: 150px; 
+    height: 150px;
+    background-color: #b0a99e; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    transition: transform 0.3s ease-out; 
+}
+
+.placeholder-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.focus-right img {
+    object-position: 70% center; 
+}
