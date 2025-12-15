@@ -147,13 +147,15 @@ p {
 
 .text.container {
   display: flex;
+  color: white;
   background-color: #00000080; /* semi-transparent black */
   width: fit-content;
 
   padding: 10px 20px;
   padding-top: 0px;
   margin: 50px auto;
-  border: 2px solid #1d1c1c;
+
+  position: static;
 
   border-radius: 15px;
   justify-content: center;
@@ -202,7 +204,11 @@ p {
 }
 
 .title-wrapper {
+  display: block;
+  width: 100%;
   margin-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
   text-align: left; /* keep everything left-aligned */
 }
 
@@ -211,7 +217,7 @@ p {
   align-items: flex-start;        /* vertically center heading along logo */
   margin-left: 20px;
   margin-top: 20px; 
-  gap: 7px;                  /* space between logo and heading */
+  gap: 7px;                /* space between logo and heading */
 }
 
 .title-container img.logo {
@@ -243,15 +249,106 @@ p {
 
 .title-bg {
     background: linear-gradient(to bottom, rgba(139, 69, 19, 0.7), rgba(139, 69, 19, 0.4));
-    padding: 10px 0;
+    padding: 10px 10px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
     z-index: 10;
     
-    margin-left: 0px;
-    margin-top: 0px;
+    margin: 0 auto;
+}
+
+.about-us-button {
+    /* Copying style from .main-nav/a */
+    background: #8b4513; 
+    color: #fff8e1;
+    text-decoration: none;
+    padding: 15px 20px;
+    
+    /* Removed margin: 20px auto; */
+    margin-left: auto;  /* Add margin on the left to match header spacing */
+    margin-right: 5px; /* Add margin on the right to match header spacing */
+    margin-top:0px;
+    margin-bottom:5px;
+    
+    border: none;
+    cursor: pointer;
+    
+    /* Rounded corners */
+    border-radius: 40px; 
+    
+    /* Shadow for depth */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    
+    /* Text style */
+    font-family: Georgia, serif;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+    
+    /* Ensure the button is not squashed by flex layout */
+    flex-shrink: 0; 
+}
+
+.about-us-button:hover {
+    background: #9e5420;
+}
+
+
+.about-dropdown-container {
+    /* Anchors the container relative to its nearest positioned ancestor (likely .title-bg) */
+    position: absolute; 
+    
+    /* Place it at the far right edge of the .title-bg */
+    right: 15px; /* Adjust 15px to your desired spacing from the edge */
+    top: 30px; /* Adjust this to vertically align it near your title/logo */
+    
+    /* Important for dropdown placement */
+    width: fit-content; 
+    z-index: 100; /* Ensure it's above other elements */
+}
+
+
+.about-us-dropdown-content {
+    /* Position the dropdown relative to the container */
+    position: absolute;
+    
+    /* Align the right edge of the dropdown with the right edge of the button */
+    right: 0;
+    top: 100%; /* Start just below the button */
+    
+    /* Styling */
+    background-color: #f9f9f9; 
+    min-width: 300px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+    border: 1px solid #ccc;
+    
+    
+    max-height: 0;
+    overflow: hidden; 
+    padding: 0 10px; /* Hide padding when closed */
+    opacity: 0; 
+    
+    /* The SLIDE EFFECT: Apply the transition */
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out, opacity 0.4s ease-in-out; 
+}
+
+
+/* The styles to apply when the dropdown is OPEN */
+.about-us-dropdown-content.open {
+    /* Must be larger than the content's actual height */
+    height: 300px;
+    overflow-y: auto;
+    max-height: 400px; 
+    padding: 15px; /* Show padding when open */
+    opacity: 1; /* Make content fully visible */
+}
+
+/* Optional: Style the text inside the dropdown */
+.about-us-dropdown-content p, .about-us-dropdown-content a {
+    margin: 5px 0;
+    color: #333;
+    font-size: 0.9em;
 }
 
 .logo {

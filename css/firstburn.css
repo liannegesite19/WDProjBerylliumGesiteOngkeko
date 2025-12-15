@@ -1,0 +1,89 @@
+html {
+  min-height: 100%;
+}
+
+.bg-wrapper {
+  position: fixed;   
+  inset: 0;          
+  z-index: -1;       
+  overflow: hidden;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       
+  object-position: center; 
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: transparent;   
+  overflow-x: hidden; 
+  font-family: Georgia, serif;
+  color: #4b382d;
+}
+
+/* 1. Container Setup */
+.image-container {
+    position: relative; /* KEY: Reference point for the absolute text */
+    width: 100%; /* Or set a specific width */
+    max-width: 1200px;
+    margin: 20px auto;
+    /* Optional: Hide anything that overflows the container */
+    overflow: hidden; 
+}
+
+.image-container img {
+    /* Ensure the image fills the container */
+    width: 100%; 
+    height: auto;
+    display: block;
+}
+
+/* 2. Overlay Text Positioning and Styling */
+.overlay-text {
+    position: absolute; /* KEY: Allows exact placement over the image */
+    top: 50%; /* Start position at the vertical center */
+    left: 50%; /* Start position at the horizontal center */
+    transform: translate(-50%, -50%); /* KEY: Adjusts the position to be perfectly centered */
+    
+    /* Styling */
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent black background for readability */
+    border-radius: 8px;
+    font-family: sans-serif;
+}
+
+.overlay-text h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.footer-bar {
+    position: fixed;          /* stick at bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    display: flex;            /* layout content inside */
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    border-top: 1px solid #8b4513;
+    color: #fff8e1;
+    font-size: 0.9em;
+    z-index: 100;
+
+    opacity: 0;               /* hidden initially */
+    transition: opacity 0.5s; /* smooth fade-in */
+}
+.footer-bar.show {
+    opacity: 1;               /* visible when show class added */
+}
