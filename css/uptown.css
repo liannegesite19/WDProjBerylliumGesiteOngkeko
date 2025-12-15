@@ -1,0 +1,194 @@
+/* --- Base Styles Imported from your Original Code --- */
+html {
+  min-height: 100%;
+}
+
+.bg-wrapper {
+  position: fixed;   
+  inset: 0;          
+  z-index: -1;       
+  overflow: hidden;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       
+  object-position: center; 
+}
+
+body {
+    background-color: transparent; 
+    font-family: Georgia, serif;
+    color: #4b382d; 
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden; 
+}
+
+/* Header and Navigation Styles (Ensuring consistency) */
+.site-header {
+    background: linear-gradient(to bottom, rgba(139, 69, 19, 0.7), rgba(139, 69, 19, 0.4));
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.site-title-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-title {
+    font-family: 'Italianno', Cursive, serif; 
+    font-weight: normal;        
+    font-size: 2.5rem;
+    color: #fff8e1; 
+    padding-left: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.main-nav {
+    background: #8b4513; 
+    border-radius: 50px;
+    padding: 5px 10px;
+    margin-right: 20px;
+    display: flex;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.main-nav a {
+    color: #fff8e1;
+    text-decoration: none;
+    padding: 8px 15px;
+    margin: 0 3px;
+    border-radius: 40px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Footer Bar Styles (Ensuring consistency) */
+.footer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px 40px;
+    width: 100%;
+    box-sizing: border-box; 
+    background-color: rgba(0, 0, 0, 0.4); 
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    z-index: 100; 
+    border-top: 1px solid #8b4513;
+    color: #fff8e1; 
+    font-size: 0.9em;
+}
+
+.footer-bar p {
+    margin: 0;
+    max-width: none;
+}
+
+/* --- New Styles for the Uptown Page Grid and Card Effect --- */
+
+/* Main content area for the grid, adjusted for the page's solemn tone */
+.uptown-page {
+    position: relative;
+    padding: 80px 20px 100px 20px; /* Space for header and footer */
+    z-index: 5;
+    min-height: calc(100vh - 100px); /* Fill space above footer */
+}
+
+.uptown-grid {
+    display: grid;
+    /* 2 columns, adjust size for the 2x2 look */
+    grid-template-columns: repeat(2, 350px); 
+    gap: 60px 80px; /* Increased gap for space and quietness */
+    justify-content: center; 
+    margin: 40px auto; 
+    max-width: 900px;
+}
+
+/* Style for each content wrapper (card + text) */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Card Container for the Hover Effect */
+.story-card {
+    display: block;
+    position: relative;
+    overflow: hidden; 
+    width: 350px; /* Match grid column size */
+    height: 200px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border: 3px solid #8b4513; /* Use your theme color for a frame */
+}
+
+/* Base Image (The revealed picture) */
+.story-card .base-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease-out;
+}
+
+/* The Overlay / Curtain */
+.story-card .overlay-curtain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+    /* Use the dark brown background color from your body text to mimic the screenshot box */
+    background-color: #4b382d; 
+}
+
+/* Text inside the curtain (Teaser/Title) */
+.overlay-curtain-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff8e1;
+    font-family: Georgia, serif; /* Use a readable font for the text label */
+    font-size: 1.2rem;
+    text-align: center;
+    width: 90%;
+}
+
+/* --- HOVER EFFECT: Sliding the Curtain --- */
+.story-card:hover .overlay-curtain {
+    transform: translateX(-100%); /* Slides the curtain left */
+}
+
+.story-card:hover .base-image {
+    transform: scale(1.05); /* Slight zoom on revealed image */
+}
+
+/* Text Space below the Boxes */
+.card-explanation {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(229, 216, 184, 0.9); /* Lighter background for readability */
+    border-radius: 5px;
+    text-align: left;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-explanation p {
+    margin: 0;
+}
