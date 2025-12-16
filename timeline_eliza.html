@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2nd Quarter Project">
+  <meta name="autor" content="Lianne Emerey P. Gesite & Estelle Miranda Ongkeko">
+  <link rel="icon" href="images/logo.png">
+  <title>Letters Across Time </title>
+    <link href="css/timeline.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+<style>
+    
+    body {
+        background-color: transparent; 
+        font-family: Georgia, serif;
+        color: #4b382d; 
+        min-height: 100vh;
+    }
+
+
+    .site-header {
+        background: linear-gradient(to bottom, rgba(139, 69, 19, 0.7), rgba(139, 69, 19, 0.4));
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+    }
+
+    .site-title-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .site-title {
+        font-family: 'Italianno', Cursive, serif; 
+        font-weight: normal;        
+        font-size: 2.5rem;
+        color: #fff8e1; 
+        padding-left: 10px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .main-nav {
+        background: #8b4513; 
+        border-radius: 50px;
+        padding: 5px 10px;
+        margin-right: 20px;
+        display: flex;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .main-nav a {
+        color: #fff8e1;
+        text-decoration: none;
+        padding: 8px 15px;
+        margin: 0 3px;
+        border-radius: 40px;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+    }
+
+    .main-nav a:hover, .main-nav a.active {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+</style>
+</head>
+
+<body class="home">
+
+    <div class="bg-wrapper">
+    <img src="images/hamilbgHD.png" alt="Background" class="bg-image">
+  </div>
+      <div class="bg-wrapper">
+
+    </div>
+
+    <header class="site-header">
+        <div class="site-title-container">
+            <img src="images/logo.png" alt="Scroll Icon" style="width: 40px; margin-left: 20px;"> 
+            <span class="site-title">Letters Across Time</span>
+        </div>
+        
+         <nav class="main-nav" aria-label="Main Navigation">
+            <a href="index.html">Home</a>
+            <a href="(hamilton)the story of tonight eliza.html">The Story of Tonight</a>
+            <a href="timeline_eliza.html" class="active">Helpless</a>
+            <a href="firstburn.html">First Burn</a>
+            <a href="uptown_eliza.html">It's Quiet Uptown</a>
+            <a href="legacy.html">Legacy</a> 
+        </nav>
+    </header>
+
+<main class="timeline-page">
+    
+    <div class="timeline-navigation">
+        <button id="prevBtn" disabled>&#9664; Previous</button> 
+        <button id="nextBtn">Next &#9654;</button>
+    </div>
+    
+    <div class="timeline-container">
+        
+        <div class="timeline-track">
+            
+            <div class="timeline-axis"></div>
+
+            <div class="timeline-event">
+                <div class="content content-top">
+                    <p>I first met Alexander Hamilton when he passed through Albany during the war. He was different from the other officers I encountered — intense, articulate, and driven by a restless ambition. Though our interaction was short, I sensed a depth beneath his polished words.</p>
+                </div>
+                <div class="axis-point">
+                    <div class="year-circle">1777</div>
+                    <div class="vertical-line line-bottom"></div> 
+                </div>
+                <div class="placeholder-circle circle-bottom focus-right">
+                    <img src="images/1777HE.png" alt="A relevant image for event 1">
+                </div>
+            </div>
+
+            <div class="timeline-event">
+                <div class="placeholder-circle circle-top">
+                    <img src="images/elizaa5.jpg" alt="A relevant image for event 2">
+                </div>
+                <div class="axis-point">
+                    <div class="vertical-line line-top"></div>
+                    <div class="year-circle">1779</div>
+                </div>
+                <div class="content content-bottom">
+                    <p>As the war continued, Alexander and I began writing to one another. Through his letters, I came to understand both his brilliance and his vulnerability. Despite our differing backgrounds, his honesty and determination drew me closer, even from afar.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-event">
+                <div class="content content-top">
+                    <p>When we reunited during the winter encampment near Morristown, the familiarity from our letters made our connection immediate. Our conversations felt natural and sincere, and I began to imagine a future that extended beyond the expectations placed upon me by society.</p>
+                </div>
+                <div class="axis-point">
+                    <div class="year-circle">1780</div>
+                    <div class="vertical-line line-bottom"></div>
+                </div>
+                <div class="placeholder-circle circle-bottom">
+                    <img src="images/elizaahamilton.jpg" alt="A relevant image for event 3">
+                </div>
+            </div>
+
+            <div class="timeline-event">
+                <div class="placeholder-circle circle-top">
+                    <img src="images/dad.jpg" alt="A relevant image for event 4">
+                </div>
+                <div class="axis-point">
+                    <div class="vertical-line line-top"></div>
+                    <div class="year-circle">1780</div>
+                </div>
+                <div class="content content-bottom">
+                    <p>Though I initially worried my family might object to Alexander’s lack of fortune, they were impressed by his character and ideals. Their acceptance affirmed my own feelings and gave me the confidence to choose love over convention.</p>
+                </div>
+            </div>
+
+            <div class="timeline-event">
+                <div class="placeholder-circle circle-top">
+                    <img src="images/wedding.jpg" alt="A relevant image for event 5">
+                </div>
+                <div class="axis-point">
+                    <div class="vertical-line line-top"></div>
+                    <div class="year-circle">1780</div> 
+                </div>
+                <div class="content content-bottom">
+                    <p>We were married at my family’s home in Albany, surrounded by warmth despite the winter cold. In choosing Alexander, I chose a life shaped by shared purpose, resilience, and devotion — a decision rooted not in comfort, but in genuine affection and belief in who we could become together.</p>
+                </div>
+            </div>
+            
+        </div> </div> </div> <div class="footer-bar">
+        <div class="qr-code">
+            <p>Sources (this is a sample QR Code)</p>
+        </div>
+        <p class="copyright">Copyright © 2025 Letters Across Time</p>
+    </div>
+
+</main>
+<script src="js/timeline.js"></script>
+
+</body>
+</html>
