@@ -1,5 +1,5 @@
 const footer = document.querySelector('.footer-bar');
-const scrollThreshold = 5; // pixels scrolled before showing footer
+const scrollThreshold = 300; // pixels scrolled before showing footer
 
 window.addEventListener('scroll', function() {
     if (window.scrollY > scrollThreshold) {
@@ -8,3 +8,4 @@ window.addEventListener('scroll', function() {
         footer.classList.remove('show'); // fade out
     }
 });
+

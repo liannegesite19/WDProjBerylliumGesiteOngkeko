@@ -16,6 +16,17 @@ html {
   object-position: center; 
 }
 
+.dark-overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-color: rgba(0, 0, 0, 0.35); 
+    z-index: 1; 
+}
+
 body {
   min-height: 100vh;
   margin: 0;
@@ -25,52 +36,147 @@ body {
   color: #4b382d;
 }
 
-/* 1. Container Setup */
 .image-container {
-    position: relative; /* KEY: Reference point for the absolute text */
-    width: 100%; /* Or set a specific width */
-    max-width: 1200px;
-    margin: 20px auto;
-    /* Optional: Hide anything that overflows the container */
+    position: relative; 
+    width: 500%; 
+    max-width: 1700px;
+    margin: 0px auto;
+    
     overflow: hidden; 
+    margin-top: -150px;
+
+    opacity: 0;
+    transform: scale(0.99);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
+    z-index: 2;
+}
+
+.image-container:hover {
+    opacity: 1; 
+    transform: scale(1);
+
+    transition-delay: 0.1s;
 }
 
 .image-container img {
-    /* Ensure the image fills the container */
     width: 100%; 
     height: auto;
     display: block;
 }
 
-/* 2. Overlay Text Positioning and Styling */
+.image-group {
+    width: 60%;
+    text-align: center; 
+    margin-top: 20px;   
+}
+
 .overlay-text {
-    position: absolute; /* KEY: Allows exact placement over the image */
-    top: 50%; /* Start position at the vertical center */
-    left: 50%; /* Start position at the horizontal center */
-    transform: translate(-50%, -50%); /* KEY: Adjusts the position to be perfectly centered */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;  
+    height: 100%; 
     
     /* Styling */
     color: white;
     text-align: center;
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0); /* Semi-transparent black background for readability */
+    padding: 24% 8% 8% 8%;
+    background-color: rgba(0, 0, 0, 0); 
     border-radius: 8px;
-    font-family: sans-serif;
+    box-sizing: border-box;
 }
 
 .overlay-text h1 {
-    font-size: 3rem;
-    margin: 0;
+    position: static; 
+    margin-top: 0;
+    margin-bottom: 20px; 
+
+    width: 100%;
+    left: auto;
+
+    text-align: center; 
+    color: #fff8e1; 
+    font-size: 4rem; 
+    text-shadow: 2px 2px 5px #000;
+    font-family: 'Italianno', Cursive, serif;
+
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.content-flex-wrapper {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 90%; 
+    margin: 0 auto;
+}
+
+.image-group {
+    flex-basis: 90%; 
+    padding-right: 20px;
+    text-align: center;
+}
+
+.image-group img {
+    width: 100%; 
+    height: auto;
+    max-width: 800px; 
+    margin: 0 auto; 
+    display: block;
+}
+
+.overlay-paragraph {
+    flex-basis: 10%; 
+    text-align: left;
+
+    color: #000000; 
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+    font-size: 1.4rem;
+    font-family: 'Dancing Script', serif, Georgia;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    flex-basis: 70%;
+    text-align: left; 
+    margin: 5px 0;
+
+    opacity: 0;
+    transform: translateY(10px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.image-container:hover .overlay-text h1,
+.image-container:hover .overlay-paragraph  {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.image-container:hover .overlay-text h1,
+.image-container:hover .overlay-paragraph { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+
+@keyframes textFadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
 
 .footer-bar {
-    position: fixed;          /* stick at bottom */
+    position: fixed;         
     bottom: 0;
     left: 0;
     width: 100%;
     padding: 20px 40px;
     box-sizing: border-box;
-    display: flex;            /* layout content inside */
+    display: flex;            
     justify-content: space-between;
     align-items: center;
     text-align: center;
@@ -81,9 +187,9 @@ body {
     font-size: 0.9em;
     z-index: 100;
 
-    opacity: 0;               /* hidden initially */
-    transition: opacity 0.5s; /* smooth fade-in */
+    opacity: 0;              
+    transition: opacity 0.5s; 
 }
 .footer-bar.show {
-    opacity: 1;               /* visible when show class added */
+    opacity: 1;              
 }

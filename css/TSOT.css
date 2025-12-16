@@ -25,64 +25,50 @@ body {
   color: #4b382d;
 }
 
-/* --- LAYOUT AND STYLING FOR CONTENT BOXES --- */
-
-/* 1. Base Styles for Content Boxes (Hamilton and Eliza) */
 .hamilton-content, 
 .eliza-content {
-    /* Box size and spacing: almost full width with 2.5% margin on sides */
     padding: 40px; 
     margin: 30px 2.5%; 
     max-width: 95%; 
     width: auto;
     border-radius: 12px;
 
-    /* Layout: Activates Flexbox for side-by-side alignment */
     display: flex; 
-    align-items: flex-start; /* Aligns content to the top */
-    gap: 30px; /* Space between the image and the text */
+    align-items: flex-start; 
+    gap: 30px; 
 }
 
-/* 2. Hamilton Specific Styling (Transparent Brown Background) */
 .hamilton-content {
-    /* Brown color (Sienna) with 80% opacity */
     background-color: rgba(160, 82, 45, 0.8); 
-    color: #4b382d; /* Ensure dark text remains for contrast on brown */
+    color: #4b382d; 
 }
 
-/* 3. Eliza Specific Styling (Transparent Black Background & Layout) */
 .eliza-content {
-    /* Black color with 80% opacity */
     background-color: rgba(0, 0, 0, 0.8); 
-    color: #fff8e1; /* Light text for contrast on black */
-
-    /* Reverses the order to place the image on the right */
+    color: #fff8e1; 
+    
     flex-direction: row-reverse; 
     text-align: right;
 }
 
-/* Ensure headings inside the Eliza box are also light-colored */
 .eliza-content h2 {
     color: #fff8e1; 
 }
 
-/* 4. Content Sizing (Image and Text) */
 
-/* Increased Image Size */
 .content-image {
     width: 350px; 
     height: auto; 
-    flex-shrink: 0; /* Prevents the image from shrinking */
+    flex-shrink: 0; 
 }
 
-/* Increased Heading Size */
 .hamilton-content h2, 
 .eliza-content h2 {
     font-size: 2.5rem; 
-    margin-top: 0; /* Removes top margin for tight alignment with the image */
+    margin-top: 0; 
 }
 
-/* Increased Paragraph Text Size and Line Height */
+
 .hamilton-content p,
 .eliza-content p {
     font-size: 1.15rem; 
@@ -90,13 +76,13 @@ body {
 }
 
 .footer-bar {
-    position: fixed;          /* stick at bottom */
+    position: fixed;         
     bottom: 0;
     left: 0;
     width: 100%;
     padding: 20px 40px;
     box-sizing: border-box;
-    display: flex;            /* layout content inside */
+    display: flex;           
     justify-content: space-between;
     align-items: center;
     text-align: center;
@@ -107,9 +93,10 @@ body {
     font-size: 0.9em;
     z-index: 100;
 
-    opacity: 0;               /* hidden initially */
-    transition: opacity 0.5s; /* smooth fade-in */
+    opacity: 0;               
+    transition: opacity 0.5s; 
 }
+
 .footer-bar.show {
-    opacity: 1;               /* visible when show class added */
+    opacity: 1;             
 }

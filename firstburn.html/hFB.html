@@ -9,6 +9,8 @@
   <title>Letters Across Time </title>
     <link href="../css/firstburn.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
 <style>
     
     body {
@@ -17,7 +19,6 @@
         color: #4b382d; 
         min-height: 100vh;
     }
-
 
     .site-header {
         background: linear-gradient(to bottom, rgba(139, 69, 19, 0.7), rgba(139, 69, 19, 0.4));
@@ -65,10 +66,13 @@
     .main-nav a:hover, .main-nav a.active {
         background-color: rgba(255, 255, 255, 0.2);
     }
+
 </style>
 </head>
 
 <body class="home">
+
+    <div class="dark-overlay"></div>
 
     <div class="bg-wrapper">
     <img src="../images/hamilbgHD.png" alt="Background" class="bg-image">
@@ -85,21 +89,59 @@
         
          <nav class="main-nav" aria-label="Main Navigation">
             <a href="../index.html">Home</a>
-            <a href="../TSOT.html/hTSOT.html">The Story of Tonight</a>
+            <a href="../TSOT.html/hTSOT.html" >The Story of Tonight</a>
             <a href="../timeline.html">Helpless</a>
             <a href="#" class="active">First Burn</a>
-            <a href="#">It's Quiet Uptown</a>
-            <a href="#">Legacy</a>
+            <a href="../uptown.html">It's Quiet Uptown</a>
+            <a href="../legacy.html">Legacy</a>
         </nav>
     </header>
 
-    <body class="content">
-        <div class="image-container">
-    <img src="../images/Untitled design.png" alt="Paper">
+    <body class="content"> 
+
+    <div class="image-container">
+    <img src="../images/hamilpaper.png" alt="Burnt Paper">
     <div class="overlay-text">
         <h1>Alexander's Confession</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium fugit consectetur quibusdam eos vel aliquid suscipit assumenda. Incidunt sequi, fugiat, consectetur nobis a commodi vero suscipit ipsam rem aspernatur ex!
 
-        </p>
+        <div class="content-flex-wrapper">
+        <div class="image-group">
+        <img src="../images/reynoldspamphlet.png" alt="Hamilton Writing the Reynold's Pamphlet">
+        </div>
+
+        <div class="overlay-paragraph">
+        <p> I believed the truth would protect me.</p>
+
+        <p> When accusations threatened my work and my name, I panicked. 
+            I had spent my entire life fighting to be taken seriously—to prove that 
+            I belonged in rooms where I was never meant to stand. I could not let 
+            whispers undo everything I had built.</p>
+
+        <p>So I wrote.</p>
+        
+        <p>I told the world about my affair, convinced that confession was the only 
+            way to save my legacy. I told myself that honesty was courage, that 
+            exposure was necessary. I did not stop to consider who would be hurt by 
+            my words—only what would be lost if I stayed silent.</p>
+        
+        <p> In trying to defend my reputation, I failed the person who trusted me most.
+             I put my ambition above my marriage, my legacy above her dignity. And no 
+             explanation, no matter how carefully written, could undo that choice.</p>
+    
+            </div>
+        </div>
     </div>
 </div>
+
+    <div class="footer-bar">
+        <div class="qr-code">
+            <p>Sources (this is a sample QR Code)</p>
+        </div>
+        <p class="copyright">Copyright © 2025 Letters Across Time</p>
+    </div>
+
+        <script src="../js/firstburn.js"></script>
+
+</body>
+</html>
+
