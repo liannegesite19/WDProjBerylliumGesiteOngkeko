@@ -39,8 +39,8 @@ body {
 }
 
 .hamilton-content {
-    background-color: rgba(160, 82, 45, 0.8); 
-    color: #4b382d; 
+    background-color: #612f18cc; 
+    color: #2c160bcc; 
 }
 
 .eliza-content {
@@ -55,13 +55,22 @@ body {
     color: #fff8e1; 
 }
 
-
 .content-image {
     width: 350px; 
     height: auto; 
     flex-shrink: 0; 
 }
 
+.image-group {
+    transition: transform 0.3s ease-in-out;
+    backface-visibility: hidden;
+}
+
+.image-group:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
 .hamilton-content h2, 
 .eliza-content h2 {
     font-size: 2.5rem; 
