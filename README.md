@@ -51,7 +51,36 @@ Second Page:
 
 ![helpess](images/Helpless.png)
 
+------------------------------------------------
 
+## 3rd Quarter Project HTML Form Proposal
 
+### HTML Form Design and Purpose
 
+The website will include an HTML form designed to allow users to reflect on historical events from the time of Alexander Hamilton and Elizabeth Schuyler Hamilton. The purpose of the form is to collect user responses in a more interactive and educational way, encouraging users to think critically about leadership, values, and decision making during the Revolutionary era.
+
+The form will ask users to write a short reflection in a free text field and answer a few short multiple choice questions. These questions will be used to analyze the user’s perspective and determine which historical character (Alexander Hamilton or Eliza Schuyler) they are most similar to. The form will appear on a dedicated webpage and will only require the user to submit their responses once.
+
+All data collected through the form will be saved on the user’s computer using the browser’s localStorage feature. This allows the website to retrieve the saved information and display personalized content on other webpages without asking the user to re enter their responses.
+
+---
+
+### Design of New Webpages
+
+The proposed update includes the design of three new webpages that demonstrate how the HTML form collects and uses user data.
+
+1. **`reflection-form.html`**  
+   This page displays the HTML form, where users write their reflection and answer short multiple choice questions. When the form is submitted, the responses are saved to localStorage.
+
+2. **`reflection-result.html`**  
+   This page retrieves the saved reflection from localStorage and displays it back to the user. It allows users to view their written response and see how it connects to the historical themes presented on the website.
+
+3. **`character-match.html`**  
+   This page uses the saved answers from the form to determine whether the user most closely aligns with Alexander Hamilton or Elizabeth Schuyler Hamilton. The page displays the matching character along with a brief explanation based on the stored data.
+
+---
+
+### Wireframes
+
+You may view the wireframes here: [canva link]
 
