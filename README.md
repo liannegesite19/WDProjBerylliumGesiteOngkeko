@@ -82,5 +82,5 @@ The proposed update includes the design of three new webpages that demonstrate h
 
 ### Wireframes
 
-You may view the wireframes here: [canva link]
+You may view the wireframes here: https://www.canva.com/design/DAG96zDyAe0/PXfwugSCKebf_NaSru6s8w/edit?utm_content=DAG96zDyAe0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
