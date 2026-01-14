@@ -57,30 +57,48 @@ Second Page:
 
 ### HTML Form Design and Purpose
 
-The website will include an HTML form designed to allow users to reflect on historical events from the time of Alexander Hamilton and Elizabeth Schuyler Hamilton. The purpose of the form is to collect user responses in a more interactive and educational way, encouraging users to think critically about leadership, values, and decision making during the Revolutionary era.
+The website will include an HTML form that allows users to reflect on historical events from the time of Alexander Hamilton and Elizabeth Schuyler Hamilton. The purpose of the form is to make the website more interactive while encouraging users to think about leadership, values, and decision-making during the Revolutionary era.
 
-The form will ask users to write a short reflection in a free text field and answer a few short multiple choice questions. These questions will be used to analyze the user’s perspective and determine which historical character (Alexander Hamilton or Eliza Schuyler) they are most similar to. The form will appear on a dedicated webpage and will only require the user to submit their responses once.
+The form will include:
+- A **textarea** for users to write a short reflection
+- **Multiple-choice (radio button) questions** related to leadership and values
+- A **submit button** to save responses
 
-All data collected through the form will be saved on the user’s computer using the browser’s localStorage feature. This allows the website to retrieve the saved information and display personalized content on other webpages without asking the user to re enter their responses.
+When the form is submitted, JavaScript will store the user’s responses using the browser’s **localStorage** feature. The data saved includes:
+- The user’s most recent reflection
+- A list of past reflections submitted on the same device
+- The calculated character match (Hamilton or Eliza)
+- Anonymous counters used to generate basic statistics
+
+Using localStorage allows the website to reuse the data across multiple webpages without requiring user accounts or server-side storage.
 
 ---
 
 ### Design of New Webpages
 
-The proposed update includes the design of three new webpages that demonstrate how the HTML form collects and uses user data.
+The proposed update includes the design of three new webpages that show how the HTML form collects, saves, and outputs user data.
 
 1. **`reflection-form.html`**  
-   This page displays the HTML form, where users write their reflection and answer short multiple choice questions. When the form is submitted, the responses are saved to localStorage.
+   This page displays the HTML form where users write their reflection and answer short multiple-choice questions. When the form is submitted, all responses are saved to localStorage.
 
 2. **`reflection-result.html`**  
-   This page retrieves the saved reflection from localStorage and displays it back to the user. It allows users to view their written response and see how it connects to the historical themes presented on the website.
+   This page retrieves data from localStorage and displays:
+   - The user’s most recent response labeled as **“Your Reflection”**
+   - A list of past reflections from the same device
+   - An anonymous reflections section showing responses without names
 
 3. **`character-match.html`**  
-   This page uses the saved answers from the form to determine whether the user most closely aligns with Alexander Hamilton or Elizabeth Schuyler Hamilton. The page displays the matching character along with a brief explanation based on the stored data.
+   This page uses the saved answers to determine whether the user aligns more with Alexander Hamilton or Elizabeth Schuyler Hamilton. It displays the matching character, a short explanation, and anonymous statistics showing how many users matched with each character.
 
 ---
 
 ### Wireframes
 
-You may view the wireframes here: https://www.canva.com/design/DAG96zDyAe0/PXfwugSCKebf_NaSru6s8w/edit?utm_content=DAG96zDyAe0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+The wireframes for all proposed webpages can be viewed here:  
+[https://www.canva.com/design/DAG96zDyAe0/PXfwugSCKebf_NaSru6s8w/edit
+](https://www.canva.com/design/DAG96zDyAe0/PXfwugSCKebf_NaSru6s8w/edit?utm_content=DAG96zDyAe0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+---
 
+### Sources
+
+W3Schools.com. (n.d.). https://www.w3schools.com/jsref/prop_win_localstorage.asp 
