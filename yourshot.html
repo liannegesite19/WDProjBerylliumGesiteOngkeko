@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2nd Quarter Project">
+    <meta name="autor" content="Lianne Emerey P. Gesite & Estelle Miranda Ongkeko">
+    <link rel="icon" href="images/logo.png">
+    <title>Your Shot - Letters Across Time</title>
+    
+    <link href="css/yourshot.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-wrapper">
+        <img src="images/hamilbgHD.png" alt="Background" class="bg-image">
+    </div>
+
+    <header class="site-header">
+        <div class="site-title-container">
+            <img src="images/logo.png" alt="Scroll Icon" style="width: 40px; margin-left: 20px;"> 
+            <span class="site-title">Letters Across Time</span>
+        </div>
+        
+        <nav class="main-nav" aria-label="Main Navigation">
+            <a href="index.html">Home</a>
+            <a href="TSOT.html">The Story of Tonight</a>
+            <a href="timeline_eliza.html">Helpless</a>
+            <a href="firstburn.html/eFB.html">First Burn</a>
+            <a href="uptown_eliza.html">It's Quiet Uptown</a>
+            <a href="legacy_eliza.html">Legacy</a>
+            <a href="reflections.html" class="active">Reflections</a>
+        </nav>
+    </header>
+
+    <main class="form-wrapper">
+        <p class="instruction-text">
+            Choose a Hamilton character (like Alexander or Eliza). If you were in their shoes during a key moment in 
+            history, what would you have done the same, and what would you have done differently? Briefly explain why.
+        </p>
+
+        <form id="reflectionForm">
+            <div class="match-logic" style="display: none;">
+                <input type="radio" name="character" value="Hamilton" id="matchH">
+                <input type="radio" name="character" value="Eliza" id="matchE">
+            </div>
+
+            <div class="parchment-paper">
+             <div class="textarea-wrapper">
+             <textarea id="userInput" placeholder="Write your letter here..." required></textarea>
+          </div>
+            </div>
+
+<div class="section-divider"></div>
+
+<div class="quiz-section">
+    <h2 class="quiz-title">Are you more like Alexander or Eliza?</h2>
+    </div>
+    
+         <div class="quiz-grid">
+            <div class="quiz-item">
+            <div class="question-bar">Question 1: How do you handle a challenge?</div>
+            <label class="option-bar"><input type="radio" name="q1" value="H" required> Fight until I win</label>
+            <label class="option-bar"><input type="radio" name="q1" value="E"> Patience and kindness</label>
+            <label class="option-bar"><input type="radio" name="q1" value="H"> Write my way out</label>
+            </div>
+
+            <div class="quiz-item">
+            <div class="question-bar">Question 3: What matters most?</div>
+            <label class="option-bar"><input type="radio" name="q3" value="H" required> Building a legacy</label>
+            <label class="option-bar"><input type="radio" name="q3" value="E"> Protecting my family</label>
+            <label class="option-bar"><input type="radio" name="q3" value="H"> Being in the room where it happens</label>
+            </div>
+
+            <div class="quiz-item">
+            <div class="question-bar">Question 2: Your ideal evening?</div>
+            <label class="option-bar"><input type="radio" name="q2" value="H" required> Debating politics</label>
+            <label class="option-bar"><input type="radio" name="q2" value="E"> A quiet night home</label>
+            <label class="option-bar"><input type="radio" name="q2" value="E"> Helping others</label>
+            </div>
+
+            <div class="quiz-item">
+            <div class="question-bar">Question 4: How do you want to be remembered?</div>
+            <label class="option-bar"><input type="radio" name="q4" value="H" required> As a hero of the revolution</label>
+            <label class="option-bar"><input type="radio" name="q4" value="E"> As a person of character</label>
+            <label class="option-bar"><input type="radio" name="q4" value="E"> For the lives I touched</label>
+            </div>
+
+            <button type="submit" class="submit-button">Submit</button>
+    </div>
+    </form>
+</main>
+
+
+    <div class="footer-bar">
+        <div class="qr-code">
+            <p>Gesite, Ongkeko</p>
+        </div>
+        <p class="copyright">Copyright © 2025 Letters Across Time</p>
+    </div>
+
+    <script src="js/yourshot.js"></script>
+</body>
+</html>

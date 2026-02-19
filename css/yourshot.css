@@ -1,0 +1,237 @@
+/* --- EXACT NAV BAR & BACKGROUND STYLES FROM YOUR CODE --- */
+html {
+    min-height: 100%;
+}
+
+.bg-wrapper {
+    position: fixed;   
+    inset: 0;          
+    z-index: -1;       
+    overflow: hidden;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       
+    object-position: center; 
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: transparent;   
+    overflow-x: hidden; 
+    font-family: Georgia, serif;
+    color: #4b382d;
+}
+
+.site-header {
+    background: linear-gradient(to bottom, rgba(139, 69, 19, 0.7), rgba(139, 69, 19, 0.4));
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.site-title-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-title {
+    font-family: 'Italianno', cursive; 
+    font-weight: normal;        
+    font-size: 2.5rem;
+    color: #fff8e1; 
+    padding-left: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.main-nav {
+    background: #8b4513; 
+    border-radius: 50px;
+    padding: 5px 10px;
+    margin-right: 20px;
+    display: flex;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.main-nav a {
+    color: #fff8e1;
+    text-decoration: none;
+    padding: 8px 15px;
+    margin: 0 3px;
+    border-radius: 40px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- FORM SPECIFIC STYLES --- */
+.form-wrapper {
+    position: relative;
+    text-align: center;
+    padding: 100px 10%;
+    padding-bottom: 200px;
+    margin-bottom: 100px; /* Space for fixed footer */
+}
+
+.instruction-text {
+    font-family: 'Italianno', cursive;
+    font-size: 2.5rem;
+    color: #fff8e1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    margin-bottom: 20px;
+}
+
+.parchment-paper {
+    background: url('../images/crumpedpaper.png') #fdf5e6; 
+    opacity: 0.7;
+    background-size: cover;
+    border-radius: 30px;
+    padding: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+textarea {
+    width: 100%;
+    height: 300px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Georgia', serif;
+    font-size: 1.3rem;
+    color: #2c1e11;
+    resize: none;
+}
+
+.submit-button {
+    font-family: 'Italianno', cursive;
+    background: #8b4513;
+    color: #fff8e1;
+    border: none;
+    padding: 12px 50px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.submit-button:hover {
+    background-color: #a0522d;
+}
+
+.quiz-section {
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.quiz-title {
+    font-family: 'Italianno', cursive;
+    font-size: 3rem;
+    color: #fff8e1;
+    margin-bottom: 30px;
+}
+
+/* Two-column grid layout */
+.quiz-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.quiz-item {
+    width: 45%; /* Makes two items fit side-by-side */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* The Question Bar (Creamy White) */
+.question-bar {
+    background: #f5f5dc; /* Cream color */
+    color: #2c1e11;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* The Option Bars (Brownish-Gold) */
+.option-bar {
+    background: #8b6b43; /* Matches your screenshot brown */
+    color: #000;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+    display: block;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.option-bar:hover {
+    background: #a68b64;
+}
+
+/* Hide the actual radio circle but keep it functional */
+.option-bar input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Change color when an option is selected */
+.option-bar:has(input:checked) {
+    background: #fff8e1;
+    color: #8b4513;
+    font-weight: bold;
+}
+
+.section-divider {
+    height: 2px;
+    width: 80%;
+    margin: 60px auto; /* Adds space above and below the line */
+    background: linear-gradient(to right, transparent, #8b4513, #fff8e1, #8b4513, transparent);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.footer-bar {
+    position: fixed;         
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    display: flex;           
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-top: 1px solid #8b4513;
+    color: #fff8e1;
+    z-index: 100;
+
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.5s ease, visibility 0.5s; 
+}
+
+.footer-bar.show {
+    opacity: 1; 
+    pointer-events: auto; 
+}
