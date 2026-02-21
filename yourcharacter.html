@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Character - Letters Across Time</title>
+    <link href="css/yourcharacter.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-wrapper">
+        <img src="images/hamilbgHD.png" alt="Background" class="bg-image">
+    </div>
+
+    <header class="site-header">
+        <div class="site-title-container">
+            <img src="images/logo.png" alt="Scroll Icon" style="width: 40px; margin-left: 20px;"> 
+            <span class="site-title">Letters Across Time</span>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="TSOT.html">The Story of Tonight</a>
+            <a href="timeline_eliza.html">Helpless</a>
+            <a href="firstburn.html/eFB.html">First Burn</a>
+            <a href="uptown_eliza.html">It's Quiet Uptown</a>
+            <a href="legacy_eliza.html">Legacy</a>
+            <a href="reflections.html">Your Shot</a>
+            <a href="character-match.html" class="active">Your Character</a>
+        </nav>
+    </header>
+
+    <main class="result-wrapper">
+        <h1 class="result-title">Your character is.....</h1>
+
+        <div class="parchment-paper result-card">
+            <div class="character-display">
+                <img id="characterImage" src="images/placeholder.png" alt="Character Image" class="match-img">
+                
+                <div class="character-info">
+                    <h2 id="characterName">Character Name</h2>
+                    <p id="characterDescription">Loading your history...</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats-container">
+            <h3>Community Matches</h3>
+            <div class="stat-bar-wrapper">
+                <div class="stat-label">Hamilton Matches: <span id="hamStats">0</span></div>
+                <div class="stat-label">Eliza Matches: <span id="elizaStats">0</span></div>
+            </div>
+        </div>
+    </main>
+
+    <div class="footer-bar show">
+        <div class="footer-names"><p>Gesite, Ongkeko</p></div>
+        <p class="copyright">Copyright © 2025 Letters Across Time</p>
+    </div>
+
+    <script src="js/yourcharacter.js"></script>
+</body>
+</html>
