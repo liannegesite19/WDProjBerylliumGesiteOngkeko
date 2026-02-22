@@ -145,3 +145,36 @@ body {
     margin: 0;
     max-width: none;
 }
+
+/* --- Grid Layout for Anonymous Reflections --- */
+.reflections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Creates columns automatically */
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto 100px auto; /* Space for the footer */
+}
+
+/* --- The Individual Cards (Parchment style) --- */
+.small-reflection-box {
+    background-color: #e5d8b8; /* Matching your parchment color */
+    border: 1px solid #8b4513;
+    border-radius: 15px;
+    padding: 25px;
+    height: 180px; /* Fixed height like your wireframe */
+    overflow-y: auto; /* Adds a scrollbar if the text is too long */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Scrollbar styling for that vintage look */
+.small-reflection-box::-webkit-scrollbar {
+    width: 6px;
+}
+.small-reflection-box::-webkit-scrollbar-thumb {
+    background: #8b4513;
+    border-radius: 10px;
+}

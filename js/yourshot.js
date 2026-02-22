@@ -7,13 +7,12 @@ document.getElementById('reflectionForm').addEventListener('submit', function(e)
     let hamiltonPoints = 0;
     let elizaPoints = 0;
 
-   
+    // Point keywords
     const hamKeywords = ['ambition', 'war', 'fight', 'write', 'legacy', 'future', 'change'];
     const elizaKeywords = ['kindness', 'help', 'family', 'resilience', 'forgive', 'stay', 'story'];
 
     const words = reflectionText.toLowerCase();
     
-  
     hamKeywords.forEach(word => { if(words.includes(word)) hamiltonPoints++; });
     elizaKeywords.forEach(word => { if(words.includes(word)) elizaPoints++; });
 
@@ -22,9 +21,7 @@ document.getElementById('reflectionForm').addEventListener('submit', function(e)
         else if (answer.value === "E") elizaPoints++;
     });
 
-
     const finalMatch = (hamiltonPoints >= elizaPoints) ? "Alexander Hamilton" : "Elizabeth Schuyler";
-
 
     const newEntry = {
         id: Date.now(),
@@ -33,26 +30,27 @@ document.getElementById('reflectionForm').addEventListener('submit', function(e)
         timestamp: new Date().toLocaleString()
     };
 
-   
+    // Save history
     let history = JSON.parse(localStorage.getItem('userReflections')) || [];
     history.push(newEntry);
     localStorage.setItem('userReflections', JSON.stringify(history));
     
-   
+    // Save recent
     localStorage.setItem('recentReflection', reflectionText);
     localStorage.setItem('recentMatch', finalMatch);
 
-
+    // Redirect
     window.location.href = 'reflection-result.html';
 });
+
 
 const footer = document.querySelector('.footer-bar');
 const scrollThreshold = 300; 
 
 function checkScroll() {
-    if (window.scrollY > scrollThreshold) {
+    if (footer && window.scrollY > scrollThreshold) {
         footer.classList.add('show');
-    } else {
+    } else if (footer) {
         footer.classList.remove('show');
     }
 }
