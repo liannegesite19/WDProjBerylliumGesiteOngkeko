@@ -39,7 +39,7 @@ document.getElementById('reflectionForm').addEventListener('submit', function(e)
     localStorage.setItem('recentMatch', finalMatch);
 
     // Redirect
-    window.location.href = 'e.reflection-result.html';
+    window.location.href = 'h.reflection-result.html';
 });
 
 
