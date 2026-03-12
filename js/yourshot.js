@@ -6,8 +6,7 @@ document.getElementById('reflectionForm').addEventListener('submit', function(e)
     
     let hamiltonPoints = 0;
     let elizaPoints = 0;
-
-    // Point keywords
+    
     const hamKeywords = ['ambition', 'war', 'fight', 'write', 'legacy', 'future', 'change'];
     const elizaKeywords = ['kindness', 'help', 'family', 'resilience', 'forgive', 'stay', 'story'];
 
