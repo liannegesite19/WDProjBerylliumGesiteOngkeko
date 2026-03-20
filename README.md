@@ -92,11 +92,34 @@ The proposed update includes the design of three new webpages that show how the 
 
 ---
 
+## FINAL MODIFICATION PROPOSAL
+
+### 1. Narrative and Purpose
+The final modification of **Letters Across Time** focuses on giving the user full agency over their digital "legacy." In the previous version, users could only submit and view reflections. This update implements a **Full CRUD (Create, Read, Update, Delete)** process within the browser's `localStorage`.
+
+**How it will be used:**
+* **Create & Read:** Users write their reflections on the `h.yourshot.html` or `e.yourshot.html` page, which are then displayed on the `Reflections` page.
+* **Update:** On the `e.reflection-result.html` or `h.reflection-result` page, a "Rewrite History" (Edit) button will be added to the user's latest reflection. This triggers the existing `editModal`. The JavaScript will fetch the current string from `localStorage`, allowing the user to modify their words in the parchment-style textarea and save the updated version.
+* **Delete:** In line with the "First Burn" theme, a "Burn Letter" (Delete) button will be implemented. This allows the user to permanently remove their reflection from the `localStorage` array, clearing the display and simulating Eliza’s historical act of erasing Alexander’s letters from the record.
+
+### 2. Updated Wireframes
+The wireframes have been updated:
+* **Edit Action:** A quill icon or "Edit" button situated next to the "Your Reflection" header.
+* **Delete Action:** A "Burn/Trash" icon that triggers a confirmation prompt before removing data.
+
+**View the Updated Wireframes here:** https://www.canva.com/design/DAG96zDyAe0/PXfwugSCKebf_NaSru6s8w/edit?utm_content=DAG96zDyAe0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton 
+
+### 3. Implementation Plan
+* **Target Key:** `userReflection` and `pastReflections` in `localStorage`.
+* **Logic:** * `Update`: Use `localStorage.setItem()` to overwrite the existing key with the new value from the `editTextarea`.
+    * `Delete`: Use `localStorage.removeItem('userReflection')` to clear the specific entry.
+    
+---
+
 ### Wireframes
 
 The wireframes for all proposed webpages can be viewed here:  
-[https://www.canva.com/design/DAG96zDyAe0/PXfwugSCKebf_NaSru6s8w/edit
-](https://www.canva.com/design/DAG96zDyAe0/PXfwugSCKebf_NaSru6s8w/edit?utm_content=DAG96zDyAe0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+https://www.canva.com/design/DAG96zDyAe0/PXfwugSCKebf_NaSru6s8w/edit?utm_content=DAG96zDyAe0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton 
 ---
 
 ### Sources
