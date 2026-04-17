@@ -7,52 +7,41 @@ document.getElementById('reflectionForm').addEventListener('submit', function(e)
     let hamiltonPoints = 0;
     let elizaPoints = 0;
     
-    const hamKeywords = ['ambition', 'war', 'fight', 'write', 'legacy', 'future', 'change'];
-    const elizaKeywords = ['kindness', 'help', 'family', 'resilience', 'forgive', 'stay', 'story'];
+    const hamKeywords = ['ambition', 'war', 'fight', 'write', 'legacy', 'future', 'change', 'shot'];
+    const elizaKeywords = ['kindness', 'help', 'family', 'resilience', 'forgive', 'stay', 'story', 'burn'];
 
     const words = reflectionText.toLowerCase();
     
-    hamKeywords.forEach(word => { if(words.includes(word)) hamiltonPoints++; });
-    elizaKeywords.forEach(word => { if(words.includes(word)) elizaPoints++; });
+    // Keywords weighted at 2 points
+    hamKeywords.forEach(word => { if(words.includes(word)) hamiltonPoints += 2; });
+    elizaKeywords.forEach(word => { if(words.includes(word)) elizaPoints += 2; });
 
+    // Handles both value="H/E" and value="Hamilton/Eliza"
     answers.forEach(answer => {
-        if (answer.value === "H") hamiltonPoints++;
-        else if (answer.value === "E") elizaPoints++;
+        if (answer.value === "H" || answer.value === "Hamilton") hamiltonPoints++;
+        else if (answer.value === "E" || answer.value === "Eliza") elizaPoints++;
     });
 
-    const finalMatch = (hamiltonPoints >= elizaPoints) ? "Alexander Hamilton" : "Elizabeth Schuyler";
+    // Tie-breaker
+    const finalMatch = (hamiltonPoints > elizaPoints) ? "Alexander Hamilton" : "Elizabeth Schuyler";
 
-    const newEntry = {
+    // Save Data
+    let history = JSON.parse(localStorage.getItem('userReflections')) || [];
+    history.push({
         id: Date.now(),
         text: reflectionText, 
         match: finalMatch,
         timestamp: new Date().toLocaleString()
-    };
-
-    // Save history
-    let history = JSON.parse(localStorage.getItem('userReflections')) || [];
-    history.push(newEntry);
-    localStorage.setItem('userReflections', JSON.stringify(history));
+    });
     
-    // Save recent
+    localStorage.setItem('userReflections', JSON.stringify(history));
     localStorage.setItem('recentReflection', reflectionText);
     localStorage.setItem('recentMatch', finalMatch);
 
-    // Redirect
-    window.location.href = 'e.reflection-result.html';
-});
-
-
-const footer = document.querySelector('.footer-bar');
-const scrollThreshold = 300; 
-
-function checkScroll() {
-    if (footer && window.scrollY > scrollThreshold) {
-        footer.classList.add('show');
-    } else if (footer) {
-        footer.classList.remove('show');
+    // Redirect to the character-specific result page
+    if (finalMatch === "Alexander Hamilton") {
+        window.location.href = 'h.reflection-result.html';
+    } else {
+        window.location.href = 'e.reflection-result.html';
     }
-}
-
-window.addEventListener('scroll', checkScroll);
-window.addEventListener('load', checkScroll);
+});
